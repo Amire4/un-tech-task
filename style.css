@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  align-items: center;
+  padding: 20px;
+}
+
+#searchbox {
+  padding: 11px 15px;
+  width: 100%;
+  max-width: 350px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto fill, minmax(240px, 1fr));
+  gap: 23px;
+}
+
+.card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: o 2px 10px rgb(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: o 4px 13px rgb(0, 0, 0, 0.12);
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 5px;
+  background: #fff;
+  padding: 10px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 10px;
+  height: 40px;
+  overflow: hidden;
+  color: #333;
+}
+
+.card p {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.card button {
+  background: #007bff;
+  color: wheat;
+  border: none;
+  padding: 14px;
+  font-weight: 600px;
+  margin-top: auto;
+  transition: 0.2s;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card button:hover {
+  background: #0056b3;
+}
+
+#loading,
+#error {
+  text-align: center;
+  font-size: 19px;
+  margin: 40px;
+  grid-column: 1/-1;
+}
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 17px;
+  pointer-events: none;
+}
+#searchbox {
+  padding:12px 15px 12px 44px;
+  width: 100%;
+  background: #f1f3f4;
+  border: 2px solid #ddd;
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+  
+}
+
+#searchbox:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .card img {
+    height: 160px;
+  }
+}
